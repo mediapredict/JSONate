@@ -1,3 +1,4 @@
+import uuid
 from builtins import object
 from datetime import datetime, date
 from decimal import Decimal
@@ -32,6 +33,14 @@ class MyModel(models.Model):
 class MyModelWithRelation(models.Model):
     name = models.CharField(max_length=100)
     to_many = models.ManyToManyField(MyModel, related_name="many_to_my_model")
+
+class MyModelWithUUID(models.Model):
+    name = models.CharField(max_length=100)
+    slug = models.UUIDField(
+        unique=True,
+        default=uuid.uuid4,
+        help_text="used in embed URL"
+    )
 
 class MyModelWithJsonateField(models.Model):
     some_name = models.CharField(max_length=255)

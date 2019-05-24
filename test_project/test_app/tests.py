@@ -19,7 +19,7 @@ from django.forms import ModelForm
 from jsonate import jsonate
 from jsonate.django_ver import django_18
 
-from .models import MyModel, MyModelWithJsonateField, WithJsonateFieldExpectingList, MyModelWithRelation
+from .models import MyModel, MyModelWithJsonateField, WithJsonateFieldExpectingList, MyModelWithRelation, MyModelWithUUID
 
 
 def destroy_media_folder(folder):
@@ -44,7 +44,10 @@ class JsonateTests(TestCase):
         self.related_model = MyModelWithRelation(name="related_model")
         self.related_model.save()
         self.related_model.to_many.add(self.model)
-    
+
+        self.uuid_model = MyModelWithUUID(name='uuid_model')
+        self.uuid_model.save()
+
     def tearDown(self):
         destroy_media_folder("files")
         destroy_media_folder("images")
@@ -144,6 +147,8 @@ class JsonateTests(TestCase):
         }
 
         self.assertJsonEqual(jsonate(self.model.many_to_my_model), [{"id": 1, "name": "related_model"}])
+
+        self.assertJsonEqual(jsonate(self.uuid_model), [{"id": 1, "name": "uuid_model"}])
 
         self.assertJsonEqual(jsonate(self.model), mymodel_data)
         self.assertJsonEqual(jsonate(MyModel.objects.all()), [mymodel_data])
