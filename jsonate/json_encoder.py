@@ -1,5 +1,6 @@
 from datetime import datetime, date
 from decimal import Decimal
+from uuid import UUID
 try:
     import json
 except ImportError:
@@ -36,6 +37,14 @@ class JsonateEncoder(json.JSONEncoder):
             return super(JsonateEncoder, self).default(obj)
         except TypeError:
             return obj
+
+
+class UUIDEncoder(JsonateEncoder):
+    def default(self, obj):
+        if isinstance(obj, UUID):
+            # if the obj is uuid, we simply return the value of uuid
+            return obj.hex
+        return JsonateEncoder.default(self, obj)
                 
 
 # Decorator for registering mapping functions
