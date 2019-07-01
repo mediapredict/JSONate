@@ -12,6 +12,8 @@ env:
 install:
   - "pip install django==${DJANGO} Pillow psycopg2-binary"
   - "pip install ."
+services:
+  - postgresql
 language: python
 python:
   - "3.6"
