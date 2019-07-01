@@ -7,9 +7,6 @@ env:
   global:
     - DJANGO_SETTINGS_MODULE=test_project.settings
   matrix:
-    - DJANGO=1.9
-    - DJANGO=1.10
-    - DJANGO=1.11
     - DJANGO=2.0
     - DJANGO=2.1
 install:
