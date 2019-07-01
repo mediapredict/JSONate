@@ -17,5 +17,8 @@ python:
   - "3.6"
 before_script:
   - "psql -c 'create database test_jsonate;' -U postgres"
-script: "python test_project/manage.py test test_app"
+script:
+  - "python test_project/manage.py makemigrations"
+  - "python test_project/manage.py migrate"
+  - "python test_project/manage.py test test_app"
 sudo: false
