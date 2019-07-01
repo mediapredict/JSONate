@@ -148,7 +148,7 @@ class JsonateTests(TestCase):
 
         self.assertJsonEqual(jsonate(self.model.many_to_my_model), [{"id": 1, "name": "related_model"}])
 
-        self.assertJsonEqual(jsonate(self.uuid_model), {"id": 1, "name": "uuid_model", "slug": str(self.uuid_model.slug)})
+        self.assertJsonEqual(jsonate(self.uuid_model), {"id": 1, "name": "uuid_model", "slug": self.uuid_model.slug.hex})
 
         self.assertJsonEqual(jsonate(self.model), mymodel_data)
         self.assertJsonEqual(jsonate(MyModel.objects.all()), [mymodel_data])
