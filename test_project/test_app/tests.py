@@ -182,6 +182,8 @@ class JsonateTests(TestCase):
             user_data_values_list_flat
         )
 
+        self.assertEqual(1, 2)
+
 
 from django.core import management
 
