@@ -13,7 +13,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'test_jsonate',
-        'USER': 'postrgres',
+        'USER': 'postgres',
     }
 }
 
