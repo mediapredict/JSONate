@@ -13,7 +13,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'test_jsonate',
-        'USER': 'postgres'
+        'USER': 'chris',
+        'PASSWORD' : '3l3phant',
     }
 }
 
@@ -79,7 +80,9 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.messages',
-    
+
     'jsonate',
     'test_app',
 )
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
