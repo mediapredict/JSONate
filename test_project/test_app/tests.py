@@ -12,7 +12,7 @@ from django.forms import ModelForm
 
 from jsonate import jsonate
 
-from .models import (
+from test_app.models import (
     MyModel, MyModelWithJsonateField, WithJsonateFieldExpectingList,
     MyModelWithRelation
 )
