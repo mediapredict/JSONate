@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='jsonate',
-    version='0.7.4',
+    version='0.7.5',
 
     author='James Robert',
     author_email='jiaaro@gmail.com',
@@ -17,7 +17,7 @@ setup(
     url='http://jsonate.com',
 
     install_requires=[
-        "django>=3.0",
+        "django>=4.0.4",
     ],
 
     packages=[
