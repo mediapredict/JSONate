@@ -27,3 +27,6 @@ classifiers= [
     "Topic :: Internet :: WWW/HTTP",
     "Topic :: Utilities"
 ]
+
+[tool.setuptools]
+packages = ["jsonate", "jsonate.templatetags"]
