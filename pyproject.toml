@@ -13,7 +13,7 @@ description = "Django library that can make ANYTHING into json"
 license = {text = "MIT"}
 keywords = ["django", "json", "templatetags"]
 urls = {homepage = "http://jsonate.com"}
-requires-python = ">=3.8"
+requires-python = ">=3.11"
 dependencies = ["django>=4.2.6"]
 readme = "README.md"
 classifiers= [
