@@ -146,7 +146,7 @@ class JsonateTests(TestCase):
             "null_field": None,
             "decimal_field": 32.25,
             "foreign_key": 1,
-            "datetime_field": "2011-01-11T11:11:11",
+            "datetime_field": "2011-01-11T11:11:11+00:00",
             "image_field": "images/image_file.wbm",
             "date_field": "2011-01-11",
             "id": 1,
