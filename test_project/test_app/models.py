@@ -1,4 +1,4 @@
-from datetime import datetime, date
+from datetime import datetime, date, timezone
 from decimal import Decimal
 
 from django.db import models
@@ -13,7 +13,7 @@ class MyModel(models.Model):
 
     sensitive_field1 = models.CharField(max_length=25, default='sensitive')
 
-    datetime_field = models.DateTimeField(default=datetime(2011, 1, 11, 11, 11, 11))
+    datetime_field = models.DateTimeField(default=datetime(2011, 1, 11, 11, 11, 11, tzinfo=timezone.utc))
     date_field = models.DateField(default=date(2011, 1, 11))
 
     decimal_field = models.DecimalField(max_digits=10, decimal_places=2, default=Decimal('32.25'))
