@@ -11,7 +11,7 @@ SECRET_KEY = "thisIsTotallyASecretJkLolHaHa!1!!1!"
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'test_jsonate',
         'USER': 'postgres',
     }
