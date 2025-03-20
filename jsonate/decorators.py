@@ -1,3 +1,4 @@
+import json
 from jsonate.http import JsonateResponse
 from django.http import HttpResponse
 
@@ -14,7 +15,7 @@ except ImportError:
             return wrapper
         return inner
 
-def jsonate_request(func):
+def jsonate_response(func):
     """
     Serializes whatever the view returns to JSON and returns it with
     mimetype "application/json" (uses jsonate.http.JsonateResponse)
@@ -24,11 +25,11 @@ def jsonate_request(func):
 
     examples:
         
-        @jsonate_request
+        @jsonate_response
         def my_view(request):
             return User.objects.all()
             
-        @jsonate_request
+        @jsonate_response
         def my_view(request):
             form = MyForm(request.POST or None)
             if form.is_valid():
@@ -47,3 +48,10 @@ def jsonate_request(func):
                 return JsonateResponse(resp, jsonp_callback=request.GET['callback'])
             return JsonateResponse(resp)
     return wrapper
+
+
+def deserialize_request(view_f):
+    "Deserialize a json request body to a Python object."
+    def _view_wrapper(request, *args, **kwargs):
+        return view_f(json.loads(request.body), *args, **kwargs)
+    return _view_wrapper
