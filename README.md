@@ -231,7 +231,7 @@ def my_view(request):
 ## Decorator
 
 The `JsonateResponse` is great, but life could get even easier! The 
-`@jsonate_request` decorator (inspired by the ajax_request decorator
+`@jsonate_response` decorator (inspired by the ajax_request decorator
 in django-annoying) will try to serialize anything a view returns
 (via JsonateResponse) return it in an HttpResponse with mimetype
 "application/json"
@@ -241,7 +241,7 @@ The only thing it will *not* try to serialize is an HttpResponse.
 example:
 
 ```python
-@jsonate_request
+@jsonate_response
 def my_view(request):
     form = MyForm(request.POST)
     if form.is_valid():

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "jsonate"
-version = "0.7.14"
+version = "1.0.0"
 authors = [
     {name = "James Robert"},
     {email = "jiaaro@gmail.com"}
@@ -14,7 +14,7 @@ license = {text = "MIT"}
 keywords = ["django", "json", "templatetags"]
 urls = {homepage = "http://jsonate.com"}
 requires-python = ">=3.12"
-dependencies = ["django>=4.2.6"]
+dependencies = ["django>=5.1.0"]
 readme = "README.md"
 classifiers= [
     "Development Status :: 4 - Beta",
