@@ -44,4 +44,4 @@ class JsonateField(models.TextField):
         }
         defaults.update(kwargs)
 
-        return super(JsonateField, self).formfield(**defaults)
+        return super().formfield(**defaults)

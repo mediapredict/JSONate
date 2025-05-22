@@ -28,7 +28,7 @@ class JsonateEncoder(json.JSONEncoder):
         try:
             # this will handle the non-string things that
             # the default encoder can handle (like numbers, booleans etc)
-            return super(JsonateEncoder, self).default(obj)
+            return super().default(obj)
         except TypeError:
             return obj
                 

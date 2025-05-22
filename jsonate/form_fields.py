@@ -19,5 +19,5 @@ class JsonateFormField(CharField):
     widget = JsonateWidget
     
     def __init__(self, *args, **kwargs):
-        super(JsonateFormField, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.validators.append(JsonateValidator)
