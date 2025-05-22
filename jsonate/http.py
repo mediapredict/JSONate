@@ -11,4 +11,4 @@ class JsonateResponse(HttpResponse):
         if jsonp_callback:
             json_content = jsonp_callback + "(" + json_content + ");"
         
-        super(JsonateResponse, self).__init__(json_content, mimetype, *args, **kwargs)
+        super().__init__(json_content, mimetype, *args, **kwargs)
