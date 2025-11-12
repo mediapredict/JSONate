@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "jsonate"
-version = "0.9.0"
+version = "0.9.1"
 authors = [
     {name = "James Robert"},
     {email = "jiaaro@gmail.com"}
